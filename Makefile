@@ -41,7 +41,7 @@ TARGET		:=	Ls-News
 BUILD		:=	build.nx
 SOURCES		:=	src
 DATA		:=	data
-ICON		:=	resources/img/demo_icon.jpg
+#ICON		:=	resources/img/demo_icon.jpg
 INCLUDES	:=	src /lib/borealis/library/include/borealis/extern/nlohmann 
 
 APP_TITLE	:=	Ls-News
