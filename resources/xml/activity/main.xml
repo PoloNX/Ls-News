@@ -1,0 +1,18 @@
+<brls:AppletFrame
+    iconInterpolation="linear"
+    footerHidden="false">
+    <brls:TabFrame
+        title="Logic Sunrise News"
+        icon="@res/img/logic_sunrise.jpg">
+
+        <brls:Tab label="News">
+            <RecyclingListTab />
+        </brls:Tab>
+
+        <brls:Tab label="Credits">
+            <brls:View xml="@res/xml/tabs/credits.xml"/>
+        </brls:Tab>
+
+    </brls:TabFrame>
+
+</brls:AppletFrame>

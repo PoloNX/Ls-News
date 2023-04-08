@@ -1,0 +1,21 @@
+name: Build Ls-News
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  AtmoPackUpdater:
+    runs-on: ubuntu-latest
+    container: devkitpro/devkita64
+    steps:
+    - uses: actions/checkout@v1
+    
+    - name: build Ls-News
+      run: | 
+        make
+      
+    - uses: actions/upload-artifact@master
+      with:
+        name: Ls-News
+        path: Ls-News.nro

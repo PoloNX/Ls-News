@@ -1,0 +1,59 @@
+<brls:Box
+    width="auto"
+    height="auto"
+    axis="column"
+    paddingTop="@style/about/padding_top_bottom"
+    paddingBottom="@style/about/padding_top_bottom"
+    paddingLeft="@style/about/padding_sides"
+    paddingRight="@style/about/padding_sides" >
+
+    <brls:Image
+        width="auto"
+        height="33%"
+        image="@res/img/logic_sunrise.jpg"
+        marginBottom="@style/about/description_margin" />
+
+    <brls:Box
+        width="auto"
+        height="auto"
+        axis="row"
+        marginBottom="@style/about/description_margin">
+
+        <brls:Label
+            width="40%"
+            height="auto"
+            text="Logic Sunrise News"
+            fontSize="30"
+            horizontalAlign="right"
+            verticalAlign="top" />
+
+        <brls:Label
+            width="auto"
+            height="auto"
+            text="Cet homebrew vous permet de lire les news de Logic Sunrise directement sur votre Switch."
+            marginLeft="@style/about/description_margin" />
+
+    </brls:Box>
+
+    <brls:Box
+        width="auto"
+        height="auto"
+        axis="column"
+        alignItems="center"
+        justifyContent="spaceEvenly"
+        grow="1.0">
+
+        <brls:Label
+            width="auto"
+            height="auto"
+            text="Développé par PoloNX" />
+
+        <brls:Label
+            width="auto"
+            height="auto"
+            text="Merci à l'équipe logic-sunrise pour les news." />
+
+    </brls:Box>
+
+
+</brls:Box>
