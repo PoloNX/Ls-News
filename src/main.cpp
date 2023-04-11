@@ -46,7 +46,7 @@ int main(int argc, char* argv[]) {
     brls::Application::pushActivity(new MainActivity());
 
     
-
+    
     // Run the app
     while (brls::Application::mainLoop())
         ;

@@ -3,7 +3,6 @@
 #include "download.hpp"
 #include <borealis/core/i18n.hpp>
 #include <memory>
-#include "parse.hpp"
 
 using namespace brls::literals;
 
@@ -34,11 +33,38 @@ NewsView::NewsView(News news)
 
     content->setText(news.json_news["content"].get<std::string>());
     
+    for (int i = 0; i < news.images.size(); i++) {
+        std::vector<unsigned char> buffer;
+        net::downloadImage(news.images[i], buffer);
+        brls::Logger().info("Downloaded image, size : {}, link : {}", buffer.size(), news.images[0]);
+        if (i == 0) {
+            image_content1->setImageFromMem(buffer.data(), buffer.size());
+        }
+        else if (i == 1) {
+            image_content2->setImageFromMem(buffer.data(), buffer.size());
+        }
+        else if (i == 2){
+            image_content3->setImageFromMem(buffer.data(), buffer.size());
+        }
+        else {
+            brls::Logger().info("Too many images");
+            continue;
+        }
+    }
 
-    std::vector<unsigned char> buffer;
-    net::downloadImage(news.images[0], buffer);
-    brls::Logger().info("Downloaded image, size : {}, link : {}", buffer.size(), news.images[0]);
-    image_content1->setImageFromMem(buffer.data(), buffer.size());
+    if (news.images.size() == 1) {
+        image_content1->setWidth(1150);
+        image_content1->setHeight(646);
+    }
+    else if (news.images.size() == 2) {
+        image_content1->setWidthPercentage(50);
+        image_content2->setWidthPercentage(50);
+    }
+    else {
+        image_content1->setWidthPercentage(33);
+        image_content2->setWidthPercentage(33);
+        image_content3->setWidthPercentage(33);
+    }
 }
 
 brls::View* NewsView::create()

@@ -39,7 +39,8 @@
 
             <brls:Box
                 width="auto"
-                height="50%"
+                height="auto"
+                alignItems="center"
                 axis="row">
             
                 <brls:Image

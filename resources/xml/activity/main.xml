@@ -9,6 +9,8 @@
             <RecyclingListTab />
         </brls:Tab>
 
+        <brls:Separator />
+
         <brls:Tab label="Credits">
             <brls:View xml="@res/xml/tabs/credits.xml"/>
         </brls:Tab>

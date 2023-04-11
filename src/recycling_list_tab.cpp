@@ -1,8 +1,10 @@
 #include "recycling_list_tab.hpp"
 #include "news_view.hpp"
-#include "parse.hpp"
+#include <iostream>
+#include "download.hpp"
 
 std::vector<News> news;
+json json_file = net::getRequest("https://raw.githubusercontent.com/PoloNX/ls-links/master/news.json");
 
 RecyclerCell::RecyclerCell()
 {
@@ -37,7 +39,6 @@ brls::RecyclerCell* DataSource::cellForRow(brls::RecyclerFrame* recycler, brls::
 {
     RecyclerCell* item = (RecyclerCell*)recycler->dequeueReusableCell("Cell");
 
-    json json_file = parse::parseJson();
     std::vector<json> json_news;
     for (auto i = 0; i < 20; i++) {
         json_news.push_back(json_file.at("news_"+std::to_string(i+1)));
@@ -61,7 +62,10 @@ RecyclingListTab::RecyclingListTab()
     // Inflate the tab from the XML file
     this->inflateFromXMLRes("xml/tabs/recycling_list.xml");
     
-    json json_file = parse::parseJson();
+
+    
+
+
     std::vector<json> json_news;
     for (auto i = 0; i < 20; i++) {
         json_news.push_back(json_file.at("news_"+std::to_string(i+1)));
