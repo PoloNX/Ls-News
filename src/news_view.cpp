@@ -33,11 +33,12 @@ NewsView::NewsView(News news)
     getAppletFrameItem()->getHintView();
 
     content->setText(news.json_news["content"].get<std::string>());
+    
 
-    /*std::vector<char> buffer;
-    net::downloadImage("http://www.logic-sunrise.com/images/news/1171859/in-switch-nintendo-va-reparer-gratuitement-les-joy-con-meme-sans-garantie-2.png", buffer);
-    unsigned char* buffer2 = reinterpret_cast<unsigned char*>(buffer.data());
-    image->setImageFromMem(buffer2, buffer.size());*/
+    std::vector<unsigned char> buffer;
+    net::downloadImage(news.images[0], buffer);
+    brls::Logger().info("Downloaded image, size : {}, link : {}", buffer.size(), news.images[0]);
+    image_content1->setImageFromMem(buffer.data(), buffer.size());
 }
 
 brls::View* NewsView::create()

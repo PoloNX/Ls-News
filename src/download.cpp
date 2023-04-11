@@ -8,13 +8,13 @@ namespace net {
 
     size_t write_callback(char* ptr, size_t size, size_t nmemb, void* userdata)
     {
-        std::vector<char>* buffer = static_cast<std::vector<char>*>(userdata);
+        std::vector<unsigned char>* buffer = static_cast<std::vector<unsigned char>*>(userdata);
         size_t total_size = size * nmemb;
         buffer->insert(buffer->end(), ptr, ptr + total_size);
         return total_size;
     }
 
-    void downloadImage(const std::string& url, std::vector<char>& buffer)
+    void downloadImage(const std::string& url, std::vector<unsigned char>& buffer)
     {
         CURL* curl = curl_easy_init();
         if (curl)

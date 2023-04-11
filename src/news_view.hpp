@@ -15,7 +15,12 @@ class News
 
     News(json news_json)
         :json_news(news_json)
-    {}
+    {
+      for (auto i = 0; i < news_json.at("images").size(); i++) {
+        images.push_back(news_json.at("images")["image_"+std::to_string(i+1)]);
+        brls::Logger().info("Image : {}", images[i]);
+      }
+    }
 
     News() {
       title = "error";
@@ -38,7 +43,7 @@ class NewsView : public brls::Box
     News news;
     BRLS_BIND(brls::Image, image, "image");
     BRLS_BIND(brls::Label, content, "content");
-    BRLS_BIND(brls::Image, image_content, "image_content");
+    BRLS_BIND(brls::Image, image_content1, "image_content1");
     BRLS_BIND(brls::Image, image_content2, "image_content2");
     BRLS_BIND(brls::Image, image_content3, "image_content3");
 };

@@ -9,5 +9,5 @@ constexpr int OFF = 0;
 #include <vector>
 
 namespace net {
-    void downloadImage(const std::string& url, std::vector<char>& buffer);
+    void downloadImage(const std::string& url, std::vector<unsigned char>& buffer);
 }

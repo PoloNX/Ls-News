@@ -43,7 +43,7 @@
                 axis="row">
             
                 <brls:Image
-                    id="image_content"
+                    id="image_content1"
                     width="auto"
                     height="auto"
                     marginBottom="10px" />

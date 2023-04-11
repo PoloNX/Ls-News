@@ -67,7 +67,6 @@ RecyclingListTab::RecyclingListTab()
         json_news.push_back(json_file.at("news_"+std::to_string(i+1)));
     }
 
-
     news.clear();
     for (auto i = 0; i < json_news.size(); i++) {
         news.push_back(News(json_news[i]));
