@@ -62,10 +62,6 @@ RecyclingListTab::RecyclingListTab()
     // Inflate the tab from the XML file
     this->inflateFromXMLRes("xml/tabs/recycling_list.xml");
     
-
-    
-
-
     std::vector<json> json_news;
     for (auto i = 0; i < 20; i++) {
         json_news.push_back(json_file.at("news_"+std::to_string(i+1)));

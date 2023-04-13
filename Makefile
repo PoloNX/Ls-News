@@ -41,12 +41,12 @@ TARGET		:=	Ls-News
 BUILD		:=	build.nx
 SOURCES		:=	src
 DATA		:=	data
-#ICON		:=	resources/img/demo_icon.jpg
+ICON		:=	resources/img/icon.jpg
 INCLUDES	:=	src /lib/borealis/library/include/borealis/extern/nlohmann 
 
 APP_TITLE	:=	Ls-News
 APP_AUTHOR	:=	PoloNX
-APP_VERSION	:=	1.0.0-dev
+APP_VERSION	:=	1.0.0
 
 ROMFS				:=	resources
 BOREALIS_PATH		:=	lib/borealis

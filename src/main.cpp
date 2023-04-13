@@ -25,6 +25,8 @@ int main(int argc, char* argv[]) {
         return EXIT_FAILURE;
     }
 
+    brls::loadTranslations();
+
     // Create the window
     brls::Application::createWindow("Logic Sunrise News");
 
@@ -45,7 +47,7 @@ int main(int argc, char* argv[]) {
     bool hasWifi = net::hasInternetConnection();
 
     brls::Logger().debug("wifi statut : {}",hasWifi);
-    
+
 
     if (hasWifi) {
         brls::Application::registerXMLView("RecyclingListTab", RecyclingListTab::create);
