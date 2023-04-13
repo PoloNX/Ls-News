@@ -1,9 +1,8 @@
-English : [readme](https://github.com/PoloNX/Ls-News/Readme_english.md)
-
+French : [readme](https://github.com/PoloNX/Ls-News#readme)
 
 <div align="center">
     <h1>Ls-News</h1>
-    <p>Un homebrew pour la nintnedo Switch qui vous permet de lire les dernières news du site Logic-Sunrise.</p>
+    <p>An homebrew app for Nintendo Switch that allows you to read news from the Logic-Sunrise website.</p>
 </div>
 
 <p align="center">
@@ -21,37 +20,37 @@ English : [readme](https://github.com/PoloNX/Ls-News/Readme_english.md)
 
 
 
-## Build l'homebrew
+## Build Instructions
 
-Avant de build l'homebrew, il faut installer les dépendances suivantes sur votre système dôté d'un [environnement de développement pour switch](https://ls-atelier-tutos.fr/environnement%20de%20developpement%20switch.php):
+Before building and using the app, make sure you have the following dependencies installed on your system (install DevkitPro before):
 
 - switch-curl
 - switch-glfw
 - switch-mesa
 - switch-glm
 
-Vous pouvez installer ces dépendances en utilisant la commande suivante :
+You can install these dependencies on your computer using the following command:
 
 ```
 pacman -S switch-curl switch-glfw switch-mesa switch-glm
 ```
 
-Pour build l'app, suivez ces étapes:
+To build the app, follow these steps:
 
-1. Clonee le repo: ``git clone --recursive https://github.com/PoloNX/Ls-News``
-2. Navigez vers le répertoire du repo: ``cd Ls-News``
-3. Build l'homebrew: ``make``
+1. Clone the repo: ``git clone --recursive https://github.com/PoloNX/Ls-News``
+2. Navigate to the repo directory: ``cd Ls-News``
+3. Build the app: ``make``
 
-## Utilisation
+## Usage
 
-Pour utiliser l'homebrew, copiez ``Ls-News.nro`` dans le répetoire ``switch`` de votre carte micro-sd. Vous pouvez ensuite le lancer via l'homebrew launcher.
+To use the app, copy the built ``Ls-News.nro`` file to your Nintendo Switch's `switch` directory and run it using your homebrew launcher.
 
-## Remerciements
+## Acknowledgements
 
-Merci au différentes personnes et organisations pour leurs contributions au projet:
+Special thanks to the following individuals and organizations for their contributions to this project:
 
-- [XITRIX](https://github.com/XITRIX) et [natinusala](https://github.com/natinusala) pour [Borealis](https://github.com/XITRIX/borealis), qui a servis dans le développement du projet.
-- Le site logic-sunrise pour leurs news.
+- [XITRIX](https://github.com/XITRIX) and [natinusala](https://github.com/natinusala) for their [Borealis](https://github.com/XITRIX/borealis) homebrew framework, which served as the foundation for this project.
+- The Logic-Sunrise website for their news content.
 ## License
 
-Ce projet est sous licence GNU General Public License v3.0. Veuillez consulter le fichier [LICENSE](https://github.com/PoloNX/Ls-News/blob/master/LICENSE) pour plus de détails.
+This project is licensed under the GNU General Public License v3.0. See the [LICENSE](https://github.com/PoloNX/Ls-News/blob/master/LICENSE) file for more details.
