@@ -1,8 +1,10 @@
 #include <switch.h>
 
+#include "no_wifi.hpp"
 #include "main_activity.hpp"
 #include "news_view.hpp"
 #include "recycling_list_tab.hpp"
+#include "download.hpp"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -29,10 +31,6 @@ int main(int argc, char* argv[]) {
     //have the application register an action on every activity that will quit when you press BUTTON_SATRT
     brls::Application::setGlobalQuit(false);
 
-    // Register custom views (including tabs, which are views)
-    brls::Application::registerXMLView("RecyclingListTab", RecyclingListTab::create);
-    brls::Application::registerXMLView("NewsView", NewsView::create);
-
     // Add custom values to the theme
     brls::getLightTheme().addColor("captioned_image/caption", nvgRGB(2, 176, 183));
     brls::getDarkTheme().addColor("captioned_image/caption", nvgRGB(51, 186, 227));
@@ -43,9 +41,23 @@ int main(int argc, char* argv[]) {
     brls::getStyle().addMetric("about/description_margin", 50);
 
     // Create and push the main activity to the stack
-    brls::Application::pushActivity(new MainActivity());
-
     
+    bool hasWifi = net::hasInternetConnection();
+
+    brls::Logger().debug("wifi statut : {}",hasWifi);
+    
+
+    if (hasWifi) {
+        brls::Application::registerXMLView("RecyclingListTab", RecyclingListTab::create);
+        brls::Application::registerXMLView("NewsView", NewsView::create);
+        brls::Application::pushActivity(new MainActivity());
+        
+    }
+
+    else {
+        brls::Logger().info("in nowifi!");
+        brls::Application::pushActivity(new NoWifi());
+    }
     
     // Run the app
     while (brls::Application::mainLoop())

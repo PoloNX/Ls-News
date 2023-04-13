@@ -1,0 +1,17 @@
+<brls:AppletFrame
+    iconInterpolation="linear"
+    footerHidden="false">
+
+    <brls:Box>
+
+        <brls:Label
+            width="100%"
+            height="auto"
+            text="Il s'emblerai que vous n'ayez pas de connexion internet.  Si cette erreur perciste veuillez ouvrir une issue ici : https://github.com/PoloNX/Ls-News/issues"
+            fontSize="30"
+            horizontalAlign="center"
+            verticalAlign="center"/>
+
+    </brls:Box>
+
+</brls:AppletFrame>

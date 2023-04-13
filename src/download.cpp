@@ -3,6 +3,7 @@
 #include <curl/curl.h>
 #include <vector>
 #include <fstream>
+#include <borealis.hpp>
 
 namespace net {
 
@@ -103,7 +104,22 @@ namespace net {
             return nlohmann::ordered_json::parse(request);
         else
             return nlohmann::ordered_json::object();
-
     }
-
+    
+    bool hasInternetConnection() {
+        CURL *curl = curl_easy_init();
+        if (curl) {
+            brls::Logger().info("in curl");
+            curl_easy_setopt(curl, CURLOPT_URL, "http://www.google.com");
+            curl_easy_setopt(curl, CURLOPT_NOBODY, 1L); // HEAD request
+            CURLcode res = curl_easy_perform(curl);
+            curl_easy_cleanup(curl);
+            std::cout << res << std::endl;
+            return (res == CURLE_OK);
+        } 
+        else {
+            brls::Logger().info("in else");
+            return false;
+        }
+    }
 }
