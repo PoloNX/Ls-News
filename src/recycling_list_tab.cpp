@@ -2,6 +2,7 @@
 #include "news_view.hpp"
 #include <iostream>
 #include "download.hpp"
+#include "no_wifi.hpp"
 
 std::vector<News> news;
 json json_file = net::getRequest("https://raw.githubusercontent.com/PoloNX/ls-links/master/news.json");
@@ -59,6 +60,7 @@ void DataSource::didSelectRowAt(brls::RecyclerFrame* recycler, brls::IndexPath i
 
 RecyclingListTab::RecyclingListTab()
 {
+
     // Inflate the tab from the XML file
     this->inflateFromXMLRes("xml/tabs/recycling_list.xml");
     

@@ -48,17 +48,15 @@ int main(int argc, char* argv[]) {
 
     brls::Logger().debug("wifi statut : {}",hasWifi);
 
-
-    if (hasWifi) {
-        brls::Application::registerXMLView("RecyclingListTab", RecyclingListTab::create);
-        brls::Application::registerXMLView("NewsView", NewsView::create);
-        brls::Application::pushActivity(new MainActivity());
-        
+    json json_file = net::getRequest("https://raw.githubusercontent.com/PoloNX/ls-links/master/news.json");
+    if (json_file.empty()) {
+        brls::Application::pushActivity(new NoWifi());
     }
 
     else {
-        brls::Logger().info("in nowifi!");
-        brls::Application::pushActivity(new NoWifi());
+        brls::Application::registerXMLView("RecyclingListTab", RecyclingListTab::create);
+        brls::Application::registerXMLView("NewsView", NewsView::create);
+        brls::Application::pushActivity(new MainActivity());
     }
     
     // Run the app
