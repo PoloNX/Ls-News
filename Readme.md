@@ -1,4 +1,4 @@
-English : [readme](https://github.com/PoloNX/Ls-News/Readme_english.md)
+English : [readme](https://github.com/PoloNX/Ls-News/blob/master/Readme_english.md)
 
 
 <div align="center">
